@@ -9,6 +9,7 @@ def AND(x1, x2):
         return 0
     elif tmp > 0:
         return 1
+
 def NAND(x1, x2):
     x = np.array([x1, x2])
     w = np.array([-0.5, -0.5])
@@ -17,7 +18,8 @@ def NAND(x1, x2):
     if tmp <= 0:
         return 0
     else:
-        return 1
+        return
+
 def OR(x1, x2):
     x = np.array([x1, x2])
     w = np.array([0.5, 0.5])
@@ -32,9 +34,6 @@ def XOR(x1, x2):
     s2 = OR(x1, x2)
     y = AND(s1, s2)
     return y
-print(
-    XOR(0, 0),
-    XOR(1, 0),
-    XOR(0, 1),
-    XOR(1, 1)
-)
+def step_funtion(x):
+    y = x > 0
+    return y.astype(np.int)
